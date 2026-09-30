@@ -2,7 +2,7 @@ name: Verified initial source import
 on:
   push:
     branches: ['release/1.0.0-corporate-skills']
-    paths: ['.source-transfer/READY']
+    paths: ['.source-transfer/READY', '.github/workflows/import-once.yml']
 permissions:
   contents: write
 jobs:
@@ -43,6 +43,7 @@ jobs:
                   if target.exists():
                       assert target.read_bytes() == data, f'Existing source conflict: {path}'
                   else:
+                      assert path.parts[0] != '.github', 'Workflow must be installed by the authorized connector first'
                       target.parent.mkdir(parents=True, exist_ok=True)
                       with target.open('xb') as stream:
                           stream.write(data)
@@ -64,8 +65,8 @@ jobs:
           record = {'transport_sha256':'f511bc2dab3e53ed2a86f818e0b61155483b31b5c1d912ab13193f84c589ad4e', 'import_base':os.environ['IMPORT_BASE'], 'python':platform.python_version(), 'source_fingerprint':json.loads((root/'native/MANIFEST.json').read_text())['source_fingerprint'], 'checks':'Build, structure validation, unit tests and reproducibility commands succeeded before this record was written', 'native_host_behavior':'NOT_RUN', 'scope':'Requested repository release branch only; no corporate systems or provider calls'}
           (root/'evidence/source-import.json').write_text(json.dumps(record,indent=2)+'\n')
           shutil.rmtree(root/'.source-transfer')
-          (root/'.github/workflows/import-once.yml').unlink()
           PY
+          git diff --exit-code -- .github/workflows
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
