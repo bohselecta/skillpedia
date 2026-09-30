@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillpedia action-receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "action": {
+      "enum": [
+        "send",
+        "save-draft",
+        "update-ticket",
+        "create-event",
+        "update-file"
+      ]
+    },
+    "account": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "approved_content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "source_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "result": {
+      "enum": [
+        "not-run",
+        "succeeded-unverified",
+        "verified",
+        "failed",
+        "uncertain"
+      ]
+    },
+    "returned_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "action",
+    "account",
+    "target",
+    "approved_content_sha256",
+    "approved_at",
+    "source_revision",
+    "result",
+    "returned_id",
+    "verified_at"
+  ]
+}

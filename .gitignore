@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+dist/
+.private/
+.skillpedia-state/
+.hoyt-state/
+*.local.json
+.env
+.env.*
+!.env.example
+
+.build-receipt.json

@@ -1,0 +1,10 @@
+{
+  "name": "skillpedia",
+  "version": "1.0.0",
+  "description": "Evidence-led corporate work coordination and delivery skills. No bundled connectors or permission grants.",
+  "author": {
+    "name": "Corgi-verse Software"
+  },
+  "repository": "https://github.com/bohselecta/skillpedia",
+  "license": "MIT"
+}

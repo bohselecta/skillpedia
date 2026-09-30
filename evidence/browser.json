@@ -1,0 +1,34 @@
+{
+  "browser": "Chromium",
+  "surface": "in-memory documentation render with inline original SVG and synthetic helper output; not native skill execution",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      },
+      "status": "PASS",
+      "checks": [
+        "inline SVG rendered",
+        "no horizontal overflow",
+        "keyboard link focus",
+        "literal helper output rendered"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "checks": [
+        "inline SVG rendered",
+        "no horizontal overflow",
+        "keyboard link focus",
+        "literal helper output rendered"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "navigation": "NOT_RUN: file and local HTTP URL navigation blocked by environment administrator; no policy changes. Rendered owned HTML in-memory, no resource/navigation check claimed."
+}
