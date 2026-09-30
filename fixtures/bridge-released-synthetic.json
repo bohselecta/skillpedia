@@ -1,0 +1,21 @@
+{
+  "payload": {
+    "schema_version": 1,
+    "kind": "reusable-method",
+    "title": "Prepare a decision-focused meeting",
+    "method": [
+      "State the decision and the accountable owner.",
+      "Separate proposals from agreements.",
+      "Finish with one next action and a check-in condition."
+    ],
+    "classification": "public",
+    "origin_environment": "corporate",
+    "destination_environment": "personal"
+  },
+  "release": {
+    "reviewed": true,
+    "authority_confirmed": true,
+    "approved_sha256": "338f2d1ee0a15294370aa970f298fe8907e323a2037d6d6c53f8d554e17fd83f",
+    "reviewed_at": "2026-09-30T16:00:00Z"
+  }
+}

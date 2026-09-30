@@ -1,0 +1,11 @@
+{
+  "name": "corgi-verse",
+  "owner": {"name": "Corgi-verse Software"},
+  "plugins": [
+    {
+      "name": "skillpedia",
+      "source": "./native/claude-code",
+      "description": "Evidence-led corporate work coordination and delivery skills."
+    }
+  ]
+}

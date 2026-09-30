@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillpedia people v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "environment": {
+      "enum": [
+        "personal",
+        "corporate"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+          },
+          "account": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "uri": {
+            "type": "string",
+            "pattern": "^(https://|urn:|user:)",
+            "maxLength": 2000
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "classification": {
+            "enum": [
+              "public",
+              "personal",
+              "internal",
+              "restricted",
+              "synthetic"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "account",
+          "uri",
+          "timestamp",
+          "classification"
+        ]
+      },
+      "maxItems": 10000
+    },
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "account_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "user_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "preferences": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "maxItems": 20
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+            },
+            "maxItems": 10000,
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+          }
+        },
+        "required": [
+          "id",
+          "display_name",
+          "role",
+          "account_id",
+          "user_id",
+          "timezone",
+          "preferences",
+          "source_ids",
+          "reviewed_at"
+        ]
+      },
+      "maxItems": 10000
+    }
+  },
+  "required": [
+    "schema_version",
+    "revision",
+    "environment",
+    "sources",
+    "people"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillpedia patch v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "base_revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+          },
+          "expected_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "after": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+              },
+              "item_version": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "kind": {
+                "enum": [
+                  "task",
+                  "issue",
+                  "risk",
+                  "decision",
+                  "note"
+                ]
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "state": {
+                "enum": [
+                  "proposed",
+                  "needs_action",
+                  "waiting",
+                  "blocked",
+                  "decided",
+                  "done",
+                  "cancelled"
+                ]
+              },
+              "owner_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "owner_status": {
+                "enum": [
+                  "unknown",
+                  "proposed",
+                  "confirmed"
+                ]
+              },
+              "due_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "follow_up_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+                },
+                "maxItems": 10000,
+                "uniqueItems": true,
+                "minItems": 1
+              },
+              "resolution_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+                },
+                "maxItems": 10000,
+                "uniqueItems": true
+              },
+              "next_action": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "checked_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+              }
+            },
+            "required": [
+              "id",
+              "item_version",
+              "kind",
+              "summary",
+              "state",
+              "owner_id",
+              "owner_status",
+              "due_at",
+              "follow_up_at",
+              "critical",
+              "source_ids",
+              "resolution_source_ids",
+              "next_action",
+              "checked_at"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "expected_version",
+          "after"
+        ]
+      },
+      "maxItems": 10000
+    }
+  },
+  "required": [
+    "base_revision",
+    "changes"
+  ]
+}

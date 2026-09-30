@@ -1,0 +1,9 @@
+{
+  "transport_sha256": "f511bc2dab3e53ed2a86f818e0b61155483b31b5c1d912ab13193f84c589ad4e",
+  "import_base": "ac835355264e7ed6983c1b5f160ceb5de50960e4",
+  "python": "3.13.15",
+  "source_fingerprint": "37fabeaa42e5400b4e5fdf8b412faabff2920733ab2d5432d2f976631c02fd01",
+  "checks": "Build, structure validation, unit tests and reproducibility commands succeeded before this record was written",
+  "native_host_behavior": "NOT_RUN",
+  "scope": "Requested repository release branch only; no corporate systems or provider calls"
+}

@@ -1,0 +1,41 @@
+{
+  "release": "1.0.0",
+  "host": null,
+  "client_version": null,
+  "package_sha256": null,
+  "source_revision": null,
+  "environment": "synthetic-only",
+  "observations": [],
+  "results": [
+    {
+      "gate": "H01",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "reason": "Receiving host not exercised in offline authoring environment"
+    },
+    {
+      "gate": "H02",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "reason": "Receiving host not exercised in offline authoring environment"
+    },
+    {
+      "gate": "H03",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "reason": "Receiving host not exercised in offline authoring environment"
+    },
+    {
+      "gate": "H04",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "reason": "Receiving host not exercised in offline authoring environment"
+    },
+    {
+      "gate": "H05",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "reason": "Receiving host not exercised in offline authoring environment"
+    }
+  ]
+}

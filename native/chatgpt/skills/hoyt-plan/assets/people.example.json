@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "environment": "personal",
+  "sources": [
+    {
+      "id": "S1",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:1",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    }
+  ],
+  "people": [
+    {
+      "id": "P-01",
+      "display_name": "Morgan Lee",
+      "role": "Synthetic review owner",
+      "account_id": "synthetic-workspace",
+      "user_id": "synthetic-morgan-a",
+      "timezone": "America/Chicago",
+      "preferences": [
+        "Prefers a written decision question before the meeting (synthetic supplied preference)."
+      ],
+      "source_ids": [
+        "S1"
+      ],
+      "reviewed_at": "2026-09-30T16:00:00Z"
+    }
+  ]
+}
