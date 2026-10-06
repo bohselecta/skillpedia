@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillpedia bridge v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "reusable-method"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "method": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 600
+          },
+          "maxItems": 12,
+          "minItems": 1
+        },
+        "classification": {
+          "const": "public"
+        },
+        "origin_environment": {
+          "enum": [
+            "personal",
+            "corporate"
+          ]
+        },
+        "destination_environment": {
+          "enum": [
+            "personal",
+            "corporate"
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "title",
+        "method",
+        "classification",
+        "origin_environment",
+        "destination_environment"
+      ]
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reviewed": {
+          "type": "boolean"
+        },
+        "authority_confirmed": {
+          "type": "boolean"
+        },
+        "approved_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+        }
+      },
+      "required": [
+        "reviewed",
+        "authority_confirmed",
+        "approved_sha256",
+        "reviewed_at"
+      ]
+    }
+  },
+  "required": [
+    "payload",
+    "release"
+  ]
+}

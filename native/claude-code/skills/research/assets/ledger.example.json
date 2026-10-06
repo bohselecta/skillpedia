@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "environment": "corporate",
+  "coverage": {
+    "status": "supplied-only",
+    "scope": "Synthetic fixture only; no live inbox, channel or company system",
+    "from": "2026-09-30T08:00:00Z",
+    "to": "2026-09-30T16:00:00Z",
+    "retrieved_at": "2026-09-30T16:00:00Z",
+    "limitations": [
+      "Fixture covers nine synthetic records; attachments and live systems were not read."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:1",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S2",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:2",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S3",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:3",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S4",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:4",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S5",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:5",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S6",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:6",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S7",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:7",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S8",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:8",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    },
+    {
+      "id": "S9",
+      "account": "synthetic-workspace",
+      "uri": "urn:skillpedia:synthetic:source:9",
+      "timestamp": "2026-09-30T15:00:00Z",
+      "classification": "synthetic"
+    }
+  ],
+  "items": [
+    {
+      "id": "I-101",
+      "item_version": 1,
+      "kind": "issue",
+      "summary": "Synthetic sandbox retry failure needs an impact check",
+      "state": "blocked",
+      "owner_id": "P-01",
+      "owner_status": "confirmed",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": true,
+      "source_ids": [
+        "S1"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Verify affected test journey",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "T-102",
+      "item_version": 1,
+      "kind": "task",
+      "summary": "Provide the agreed review packet",
+      "state": "needs_action",
+      "owner_id": "P-02",
+      "owner_status": "confirmed",
+      "due_at": "2026-09-30T14:00:00Z",
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S2"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Finish the review packet",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "D-103",
+      "item_version": 1,
+      "kind": "decision",
+      "summary": "Choose staged rollout versus deferral",
+      "state": "proposed",
+      "owner_id": "P-03",
+      "owner_status": "proposed",
+      "due_at": "2026-09-30T18:00:00Z",
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S3"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Ask the confirmed decider to choose",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "T-104",
+      "item_version": 1,
+      "kind": "task",
+      "summary": "Await partner test confirmation",
+      "state": "waiting",
+      "owner_id": "P-04",
+      "owner_status": "confirmed",
+      "due_at": null,
+      "follow_up_at": "2026-10-01T16:00:00Z",
+      "critical": false,
+      "source_ids": [
+        "S4"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Check at the agreed follow-up time",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "N-105",
+      "item_version": 1,
+      "kind": "note",
+      "summary": "Reference article for later review",
+      "state": "proposed",
+      "owner_id": null,
+      "owner_status": "unknown",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S5"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "T-106",
+      "item_version": 1,
+      "kind": "task",
+      "summary": "Synthetic test matrix delivered",
+      "state": "done",
+      "owner_id": "P-02",
+      "owner_status": "confirmed",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S6"
+      ],
+      "resolution_source_ids": [
+        "S6"
+      ],
+      "next_action": "",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "T-107",
+      "item_version": 1,
+      "kind": "task",
+      "summary": "Possible agenda improvement; no date agreed",
+      "state": "proposed",
+      "owner_id": null,
+      "owner_status": "unknown",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S7"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Clarify whether an action is needed",
+      "checked_at": "2026-09-30T16:00:00Z"
+    },
+    {
+      "id": "I-108",
+      "item_version": 1,
+      "kind": "issue",
+      "summary": "Dependency status has not been rechecked",
+      "state": "blocked",
+      "owner_id": null,
+      "owner_status": "unknown",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": false,
+      "source_ids": [
+        "S8"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Recheck the dependency source",
+      "checked_at": "2026-09-26T16:00:00Z"
+    },
+    {
+      "id": "R-109",
+      "item_version": 1,
+      "kind": "risk",
+      "summary": "Synthetic security-review exception is unconfirmed",
+      "state": "proposed",
+      "owner_id": null,
+      "owner_status": "unknown",
+      "due_at": null,
+      "follow_up_at": null,
+      "critical": true,
+      "source_ids": [
+        "S9"
+      ],
+      "resolution_source_ids": [],
+      "next_action": "Consult the approved escalation policy",
+      "checked_at": "2026-09-30T16:00:00Z"
+    }
+  ]
+}
